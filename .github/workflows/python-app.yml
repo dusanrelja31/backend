@@ -29,14 +29,14 @@ jobs:
           git reset --hard origin/main
         
           # Install dependencies (if any changes)
+          rm -rf venv
           python3 -m venv venv
-          source venv/bin/activate
-          /home/ubuntu/backend install -r requirements.txt
+          source /home/ubuntu/backend/venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
           
           # Restart the application service (e.g., Gunicorn via systemd)
           sudo systemctl daemon-reload
-          sudo systemctl enable backend_dusan
-          sudo systemctl start backend_dusan
           sudo systemctl restart backend_dusan.service
           
           # Check service status (optional)
