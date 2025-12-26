@@ -31,7 +31,7 @@ jobs:
           # Install dependencies (if any changes)
           python3 -m venv venv
           source venv/bin/activate
-          /home/ubuntu/backend/ install -r requirements.txt
+          /home/ubuntu/backend install -r requirements.txt
           
           # Restart the application service (e.g., Gunicorn via systemd)
           sudo systemctl daemon-reload
