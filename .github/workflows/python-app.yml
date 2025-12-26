@@ -22,7 +22,7 @@ jobs:
         script: |
           
           # Navigate to app directory
-          cd /home/ubuntu/backend_dusan
+          cd /home/ubuntu/backend
           
           # Pull latest changes from GitHub
           git fetch origin
@@ -31,7 +31,7 @@ jobs:
           # Install dependencies (if any changes)
           source venv/bin/activate
           pip install gunicorn
-          /home/ubuntu/backend_dusan/venv/bin/pip install -r requirements.txt
+          /home/ubuntu/backend/venv/bin/pip install -r requirements.txt
           
           # Restart the application service (e.g., Gunicorn via systemd)
           sudo systemctl daemon-reload
